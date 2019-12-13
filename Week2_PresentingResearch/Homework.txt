@@ -1,0 +1,7 @@
+Homework for week 2
+
+Go through each of the R, Stata, and SPSS scripts. See how one can set up a reproducible analysis by reading in the initial data, producing some tables and graphs, and then exporting that information to a different file. After this week you can choose a particular software, but I want you to see an example in each software at least once.
+
+Then for your homework I want you to make a similar chart with the variable CFS1 on the X axis (311 complaints about garbage related calls for service) and TotalCrime on the Y axis. Use whatever software you want.
+
+Also make a descriptive table for total crimes, calls for service, and alcohol licenses. Include in the table the minimum, maximum, mean, standard deviation, median, and 25th and 75th quantiles. Place the table and the two charts (alcohol licenses and calls for service) in a word document with your name. Use the principles dicussed in class on how to make a nice chart and tables.
