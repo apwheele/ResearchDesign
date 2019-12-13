@@ -1,0 +1,5 @@
+This is a set of simulated data, crime counts over ten periods for 400 individuals. I simulated the data according to a zero inflated Poisson process, and there are several subgroup trajectories. A hint for how I estimated them -- there is only one parameter for zero inflation for *all* groups, and none of the sub-groups had a higher polynomial than squared.
+
+The code snippets show estimating solutions for 3 and 4 groups. I want you to estimate solutions for 2 through 7 groupings. Then make a table showing the AIC, BIC (and the cross validation statistic if you used R) for those models. Based on those statistics, choose one model to report. 
+
+For the chosen model, present a table that includes the average posterior probability, the odds of correct classification, the total number in each group, the percent in each group, and the percent expected based on the posterior probabilities. Present a figure of the predicted means, and a figure showing the individual trajectories for each classified group. Interpret the trajectories and the absolute fit criteria.

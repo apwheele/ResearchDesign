@@ -1,0 +1,52 @@
+For this class I used publicly available data on recidivism for adults assessed via the COMPAS instrument in Florida. This data was collected by ProPublica, and they have a series of articles about machine learning and biases it can potentially create. See the links below for access to the data and description of how they conducted their analysis.
+
+ - https://github.com/propublica/compas-analysis
+ - https://www.propublica.org/article/how-we-analyzed-the-compas-recidivism-algorithm
+ - https://github.com/propublica/compas-analysis/blob/master/Compas%20Analysis.ipynb
+
+I prepared the data into one rectangular dataset for class. You can see my SPSS code that I used to take the original database and change it into this form here, https://www.dropbox.com/s/sv49g3q563147b6/ProPub_COMPAS_Recid.zip?dl=0.
+
+Below is the codebook for the variables. Note these are my best guesses based on the fields and the variable names - the ProPublica dataset did not have any direct metadata. For class we are predicting the post arrest 30 days. This prevents predicting the arrest that prompted the COMPAS screening directly, due to date mixups or various other idiosyncratic events that might cause that.
+
+Codebook for Florida COMPAS cases:
+
+ - person_id: unique identifier
+ - screening_date: date the COMPAS screening was given
+ - Recid: equal to 1 if arrested after screening_date
+ - Exposure: exposure time following screening, either the first arrest date (for Recid = 1) or number of days between screening and 3/30/2016 (for Recid = 0)
+ - FirstArrest_Date: date of first arrest after screening (note some very low dates, may be misleading)
+ - PostDays - days of the first arrest after screening
+ - FirstArrest_Charge: charge of the first arrest, recoding into F (Felony), M (misdemeanor), O (Other), blank means they were not arrested
+ - PostArr: number of seperate arrests after the screening date
+ - Recid30: equal to 1 if arrested 30 days after screening date
+ - Exposure30: exposure time following screening, either the first arrest date post 30 days (for Recid30 = 1) or number of days between screening and 3/30/2016 (for Recid30 = 0)
+ - FirstArrest_Date30: date of first arrest, after minimum of 30 days post screening
+ - PostDays30: Number of days after screening until first arrest (after 30 days)
+ - FirstArrest_Charge30: charge of the first arrest (post 30 days), recoded into F, M and O, blank means not arrested
+ - PostArr30: number of seperate arrests at least 30 days after screening
+ - LastArrest_Date: date of last arrest
+ - LastArrest_Charge: charge of last arrest
+ - PostScreen: number of days between screening and 3/30/2016 (when the arrest charges effectively end, besides a few outlier dates)
+ - race: race of individual (African American, Asian, Caucasian, Hispanic, Native American, Other)
+ - sex: female or male (no missing)
+ - dob: date of birth
+ - YearsScreening: age when screened (equals # of days/365.25)
+ - age_cat: Age categories within COMPAS database (Less than 25, 25-45, greater than 45)
+ - marital_status: divorced, married, separated, sig other, single, unknown, widowed
+ - CompScore.1: original COMPAS score, risk of recidivism
+ - CompScore.2: original COMPAS score, risk of violence
+ - CompScore.3: original COMPAS score, risk of failure to appear
+ - juv_fel_count: number of juvenile felonies
+ - juv_misd_count: number of juvenile misdemeanors
+ - juv_other_count: number of juvenile crimes that are not felonies or misdemeanors
+ - priors_count: total numbe rof adult priors
+ - JailDays: number of days in jail for current charge that precipitated COMPAS screening
+ - c_charge_degree: current arrest charge that precipitated screening
+ - c_charge_desc: current description for arrest charge that precipitated screening
+ - is_recid: flag for if current charge is a recidivism for a prior offense
+ - num_r_cases: prior number of times recidivated (missing recoded to zero)
+ - r_charge_degree: if recidivated what was that original charge
+ - r_charge_desc: if recidivated what was the original charge description
+ - is_violent_recid: is the prior recidivated charge a violent charge?
+ - vr_charge_degree: charge degree for prior recidivated violent
+ - vr_charge_descript: description for prior recidivated violent charge
