@@ -8,6 +8,9 @@ If you cannot get access to the reading materials, just email me and I will forw
 
 # ToDo
 
+ - Add in HTML pages with math for non-linear regression/generalized linear models lecture
+     - [Splines](https://personal.utdallas.edu/~Andrew.Wheeler/Splines.html)
+     - [Poisson regression](https://personal.utdallas.edu/~Andrew.Wheeler/PoissonReg.html)
  - Incorporate Synthetic Control into DiD lecture
      - see [this blog post]( https://andrewpwheeler.wordpress.com/2019/12/06/using-regularization-to-generate-synthetic-controls-and-conformal-prediction-for-significance-tests/) for an R code example (using `synth` with placebo, and comparing to lasso). 
 	 - Stata synth example???
